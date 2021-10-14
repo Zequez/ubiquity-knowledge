@@ -5,7 +5,7 @@
 
 ## Minting
 - When [[TWAP Oracle]] < 1 you can burn [[uAD]] and get uAD-equivalent-uAR plus a premium based on the debt cycle status
-	- Right now the DebtCouponManager has a `exchangeDollarsForUAR` that does this, calling the `UARForDollarsCalculator.getUARAmount` contract to get the amount. However, the calculation there is not up to spec. It uses a `blockHeightDebt` that is set to the current block number when the debt cycle starts.
+	- Right now the DebtCouponManager has a `exchangeDollarsForUAR` that does this, calling the `UARForDollarsCalculator.getUARAmount` contract to get the amount. However, the calculation there is not up to spec. It uses a `blockHeightDebt` that is set to the current block number when the debt cycle starts to calculate the premium, but the uAR is not calculated with the inflation rate considered.
 - On the Proxy Yield Aggregator you get all the rewards in uAD-equivalent-uAR
 
 ## Burning
